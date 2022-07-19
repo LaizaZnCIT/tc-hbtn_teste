@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
 import org.junit.Test;
 
-public class TestePessoa extends TestCase {
+public class TestePessoa{
 
     @Test
     public void testar_email_com_arroba(){
@@ -15,7 +15,7 @@ public class TestePessoa extends TestCase {
 
     @Test
     public void testar_email_mais_50_caracteres(){
-        assertFalse(Pessoa.emailValid("email_teste_muito_longo_nao_deve_ser_valido@dominio.com.br"));
+        assertEquals(Pessoa.emailValid("email_teste_muito_longo_nao_deve_ser_valido@dominio.com.br"), false);
     }
 
 }
