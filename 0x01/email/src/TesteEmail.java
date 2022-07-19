@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
 import org.junit.Test;
 
-public class TestePessoa{
+public class TesteEmail extends TestCase {
 
     @Test
     public void testar_email_com_arroba(){
