@@ -9,9 +9,11 @@ public class Person {
 
     public boolean checkPassword(String password){
         boolean contemCaracteresEspeciais = password.contains("@") || password.contains("#") || password.contains("%") || password.contains("$");
-        Pattern p = Pattern.compile("[a-zA-Z0-9]");
-        Matcher m = p.matcher(password);
-        return password.length() >= 8 && contemCaracteresEspeciais && m.find();
+        Pattern letters = Pattern.compile("[a-zA-Z]");
+        Pattern digits = Pattern.compile("[0-9]");
+        Matcher matchDigits = digits.matcher(password);
+        Matcher matchLetters = letters.matcher(password);
+        return password.length() >= 8 && contemCaracteresEspeciais && matchLetters.find() && matchDigits.find();
     }
 
 }
